@@ -91,7 +91,10 @@ def stock():
         #Mostramos el stock
         print("\n ---Listado de Productos---")
         for producto in invprod:
-            print(f"ID: {producto[0]}, Nombre: {producto[1]}, Cantidad: {producto[3]}, Descripción: {producto[2]}, Precio: {producto[4]}, Categoria: {producto[5]}")
+            print("="*25)
+            print(f"ID: {producto[0]}") 
+            print("="*25)
+            print(f"|Nombre: {producto[1]}\n | Cantidad: {producto[3]}\n | Descripción: {producto[2]}\n | Precio: {producto[4]}\n | Categoria: {producto[5]}")
         conexion.commit()
     #En caso de error, se deshace cualquier cambio
     except sqlite3.Error as e:
@@ -145,7 +148,10 @@ def act(prodid, nameact=None, descact=None, cantact=None, precioact=None, catact
         prodact = cursor.fetchone()
 
         print("\n Producto actualizado")
-        print(f"ID: {prodact[0]} | Nombre: {prodact[1]} | Cantidad: {prodact[2]} | Descripción: {prodact[3]} | Precio: {prodact[4]:2f} | Categoria: {prodact[5]}")
+        print("="*25)
+        print(f"ID: {producto[0]}") 
+        print("="*25)
+        print(f"|Nombre: {producto[1]}\n | Cantidad: {producto[3]}\n | Descripción: {producto[2]}\n | Precio: {producto[4]}\n | Categoria: {producto[5]}")
     #En caso de error, se deshace cualquier cambio
     except sqlite3.Error as e:
         conexion.rollback()
@@ -192,7 +198,11 @@ def look(prodid):
             print(Fore.RED + f"No existe producto con el ID: {prodid}")
             return
         else:
-            print(f"ID: {prodact[0]} | Nombre: {prodact[1]} | Cantidad: {prodact[3]} | Descripción: {prodact[2]} | Precio: {prodact[4]:2f} | Categoria: {prodact[5]}")
+                    print("\n Producto actualizado")
+        print("="*25)
+        print(f"ID: {producto[0]}") 
+        print("="*25)
+        print(f"|Nombre: {producto[1]}\n | Cantidad: {producto[3]}\n | Descripción: {producto[2]}\n | Precio: {producto[4]}\n | Categoria: {producto[5]}")
     except sqlite3.Error as e:
         conexion.rollback()
         print(f"Error en la búsqueda {e}")
@@ -217,7 +227,11 @@ def lowstock():
                 return
         print("\nProductos con Stock Bajo")
         for producto in bajostock:
-            print(f"ID: {producto[0]} | Nombre: {producto[1]} | Cantidad: {producto[3]} | Descripción: {producto[2]} | Precio: {producto[4]:2f} | Categoria: {producto[5]}")
+            print("\n Producto actualizado")
+            print("="*25)
+            print(f"ID: {producto[0]}") 
+            print("="*25)
+            print(f"|Nombre: {producto[1]}\n | Cantidad: {producto[3]}\n | Descripción: {producto[2]}\n | Precio: {producto[4]}\n | Categoria: {producto[5]}")
     except sqlite3.Error as e:
         conexion.rollback()
         print("Error al mostrar la opción seleccionada")
