@@ -89,12 +89,12 @@ def stock():
                 print(Fore.RED + "No hay productos cargados.")
                 return
         #Mostramos el stock
-        print("\n ---Listado de Productos---")
+        print("\n---Listado de Productos---")
         for producto in invprod:
             print("="*25)
             print(f"ID: {producto[0]}") 
             print("="*25)
-            print(f"|Nombre: {producto[1]}\n | Cantidad: {producto[3]}\n | Descripción: {producto[2]}\n | Precio: {producto[4]}\n | Categoria: {producto[5]}")
+            print(f"| Nombre: {producto[1]}\n| Cantidad: {producto[3]}\n| Descripción: {producto[2]}\n| Precio: {producto[4]}\n| Categoria: {producto[5]}")
         conexion.commit()
     #En caso de error, se deshace cualquier cambio
     except sqlite3.Error as e:
@@ -151,7 +151,7 @@ def act(prodid, nameact=None, descact=None, cantact=None, precioact=None, catact
         print("="*25)
         print(f"ID: {producto[0]}") 
         print("="*25)
-        print(f"|Nombre: {producto[1]}\n | Cantidad: {producto[3]}\n | Descripción: {producto[2]}\n | Precio: {producto[4]}\n | Categoria: {producto[5]}")
+        print(f"| Nombre: {producto[1]}\n| Cantidad: {producto[3]}\n| Descripción: {producto[2]}\n| Precio: {producto[4]}\n| Categoria: {producto[5]}")
     #En caso de error, se deshace cualquier cambio
     except sqlite3.Error as e:
         conexion.rollback()
@@ -200,9 +200,9 @@ def look(prodid):
         else:
                     print("\n Producto actualizado")
         print("="*25)
-        print(f"ID: {producto[0]}") 
+        print(f"ID: {prodact[0]}") 
         print("="*25)
-        print(f"|Nombre: {producto[1]}\n | Cantidad: {producto[3]}\n | Descripción: {producto[2]}\n | Precio: {producto[4]}\n | Categoria: {producto[5]}")
+        print(f"|Nombre: {prodact[1]}\n| Cantidad: {prodact[3]}\n| Descripción: {prodact[2]}\n| Precio: {prodact[4]}\n| Categoria: {prodact[5]}")
     except sqlite3.Error as e:
         conexion.rollback()
         print(f"Error en la búsqueda {e}")
@@ -231,7 +231,7 @@ def lowstock():
             print("="*25)
             print(f"ID: {producto[0]}") 
             print("="*25)
-            print(f"|Nombre: {producto[1]}\n | Cantidad: {producto[3]}\n | Descripción: {producto[2]}\n | Precio: {producto[4]}\n | Categoria: {producto[5]}")
+            print(f"| Nombre: {producto[1]}\n| Cantidad: {producto[3]}\n| Descripción: {producto[2]}\n| Precio: {producto[4]}\n| Categoria: {producto[5]}")
     except sqlite3.Error as e:
         conexion.rollback()
         print("Error al mostrar la opción seleccionada")
