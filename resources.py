@@ -149,9 +149,9 @@ def act(prodid, nameact=None, descact=None, cantact=None, precioact=None, catact
 
         print("\n Producto actualizado")
         print(Fore.BLUE + "="*25)
-        print(f"ID: {producto[0]}") 
+        print(f"ID: {prodact[0]}") 
         print("="*25)
-        print(Fore.MAGENTA + f"| Nombre: {producto[1]}\n| Cantidad: {producto[3]}\n| Descripción: {producto[2]}\n| Precio: {producto[4]}\n| Categoria: {producto[5]}")
+        print(Fore.MAGENTA + f"| Nombre: {prodact[1]}\n| Cantidad: {prodact[3]}\n| Descripción: {prodact[2]}\n| Precio: {prodact[4]}\n| Categoria: {prodact[5]}")
     #En caso de error, se deshace cualquier cambio
     except sqlite3.Error as e:
         conexion.rollback()
