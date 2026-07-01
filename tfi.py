@@ -35,9 +35,8 @@ while True:
                 print(Fore.RED + "Para mantener un valor, dejar vacío el campo" + Fore.WHITE)
                 nameact = input("Ingrese el nuevo nombre: ").strip() or None
                 descact = input("Ingrese nueva descripción: ").strip() or None
-                while True:
-                    cantact = input("Ingrese nueva cantidad: ").strip() or None
-                    precioact = input("Ingrese el nuevo precio: ").strip() or None
+                cantact = input("Ingrese nueva cantidad: ").strip() or None
+                precioact = input("Ingrese el nuevo precio: ").strip() or None  
                 catact = input("Ingrese nueva categoría: ").strip() or None
                 r.act(prodid, nameact, descact, cantact, precioact,catact)
             case 4: #Se elimina el producto en base a su ID
